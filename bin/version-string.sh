@@ -45,14 +45,59 @@ function c-version-string {
                 s/^([0-9]{4}-[0-9]{2}-[0-9]{2})-/\1+/;
                 '
         )
+
+
+
+
+
+
+<<K   # REVDATE
+
+    ### TRY THIS TIMEZONE AUTO CONVERSION  ...
+    ### REVDATE=$( date -d '7 hours' '+%Y-%m-%d' )
+
+    # 2025-01-19 mod : 
+	# VERSION_NUMBER "%Y-%m-%d--%H-%M-%S"   works great!
+
+    # REVDATE=$( date -d '7 hours' '+%y-%m-%d..%H-%M' )  
+
+K
+      REVDATE=$( date -d '7 hours' '+%y.%m.%d..%H.%M' )  
+
+
+
     # handle an empty name (can happen during github action runs)
     if [[ -z "$REV" ]]; then
+
         HASH=$(git describe --always)
-        REV="0.$HASH"
+
+        #  OG :   REV="0.$HASH"
+
+        #  mod : 
+        REV=$REVDATE
+
     fi
+
     # print the version string
+
     echo "$REV"
+
 }
 
 main "$@"
+
+
+
+
+
+
+
+<<K   
+
+K
+
+
+
+###   END   
+
 

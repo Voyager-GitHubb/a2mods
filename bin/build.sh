@@ -13,14 +13,27 @@ if [ 0 = "$#" ]; then
   exit
 fi
 
+
+
 # repo root dir
 BASEDIR=$(dirname "$(dirname "$0")")
 
+
+### OG :
+### TARGET="$1" ; shift
+### ARGS="$*"
+### UI=$(basename "$TARGET" .h)
+### MODEL=$(dirname "$TARGET")
+### PROGRAM="ui/$UI/$UI"
+
+###  Mod : 
 TARGET="$1" ; shift
 ARGS="$*"
 UI=$(basename "$TARGET" .h)
 MODEL=$(dirname "$TARGET")
-PROGRAM="ui/$UI/$UI"
+PROGRAM="$UI/$UI"
+
+
 
 # figure out the model number
 MODEL_NUMBER=$(head -1 "$MODEL/model")
@@ -28,15 +41,21 @@ MODEL_NUMBER=$(head -1 "$MODEL/model")
 # figure out the MCU type and set some vars
 eval "$( bin/detect-mcu.sh "$TARGET" )"
 
+
+
+###   ###   ###   ###   ###   ###   ###   ###   ###   ###   ###
+###   OG DFPPATH ...   
 # detect and enable a relevant Atmel DFP
-if [[ $MCUNAME =~ "attiny" ]]; then
-  DFPPATH=$BASEDIR/arch/dfp/attiny
-elif [[ $MCUNAME =~ "avr" && $MCUNAME =~ "dd" ]]; then
-  DFPPATH=$BASEDIR/arch/dfp/avrdd
-else
-  echo "Unrecognized MCU type: '$MCUNAME'"
-  exit 1
-fi
+# detect and enable a relevant Atmel DFP
+###   if [[ $MCUNAME =~ "attiny" ]]; then
+###     DFPPATH=$BASEDIR/arch/dfp/attiny
+###   elif [[ $MCUNAME =~ "avr" && $MCUNAME =~ "dd" ]]; then
+###     DFPPATH=$BASEDIR/arch/dfp/avrdd
+###   else
+###     echo "Unrecognized MCU type: '$MCUNAME'"
+###     exit 1
+###   fi
+
 # skip verification because newer avr-libc doesn't need DFPs,
 # so the DFP shouldn't be mandatory
 ## ensure the DFP files exist
@@ -45,6 +64,41 @@ fi
 #  echo "Install DFP files with './make dfp'"
 #  exit 1
 #fi
+
+
+
+###   ###   ###   ###   ###   ###   ###   ###   ###   ###   ###
+###  Mod DFPPATH ...
+
+# detect and enable a relevant Atmel DFP
+# detect and enable a relevant Atmel DFP
+if [[ $MCUNAME =~ "attiny" ]]; then
+
+DFPPATH=$BASEDIR/dfp/attiny
+
+  echo "    "
+  echo "  DFPPATH=  $DFPPATH"
+  echo "    "
+
+elif [[ $MCUNAME =~ "avr" && $MCUNAME =~ "dd" ]]; then
+
+DFPPATH=$BASEDIR/dfp/avrdd
+
+
+else
+
+  echo "Unrecognized MCU type: '$MCUNAME'"
+
+  exit 1
+
+fi
+
+###   ###   ###   ###   ###   ###   ###   ###   ###   ###   ###
+
+
+
+
+
 
 export CC=avr-gcc
 export CPP=avr-cpp
@@ -61,6 +115,12 @@ export OBJS=$PROGRAM.o
 
 OTHERFLAGS="-DCFG_H=$TARGET -DMODEL_NUMBER=\"$MODEL_NUMBER\" $ARGS"
 
+
+
+
+
+
+
 function run () {
   #echo "$1" ; shift
   #echo "$*"
@@ -75,3 +135,12 @@ run "$OBJCOPY" "$OBJCOPYFLAGS" "$PROGRAM.elf" "$PROGRAM.hex"
 # deprecated
 #run avr-size -C --mcu=$MCUNAME $PROGRAM.elf | grep Full
 run avr-objdump -Pmem-usage "$PROGRAM".elf | grep -E 'Full|Device' | sed 's/^/  /;'
+
+
+
+
+
+
+###   END   
+
+
