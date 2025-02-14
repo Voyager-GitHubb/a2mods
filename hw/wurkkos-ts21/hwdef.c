@@ -1,10 +1,14 @@
-// Wurkkos TS25 PWM helper functions
+/// wurkkos--ts21/hwdef.c
+/// a copy of  wurkkos/ts10/hwdef.c
+
+
+// Wurkkos TS10 PWM helper functions
 // Copyright (C) 2023 Selene ToyKeeper
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
 
-#include "fsm/chan-rgbaux.c"
+#include "fsm/chan-aux.c"
 
 void set_level_zero();
 
@@ -13,11 +17,14 @@ bool gradual_tick_main(uint8_t gt);
 
 
 Channel channels[] = {
-    { // channel 1 only
+    { // main LEDs
         .set_level    = set_level_main,
         .gradual_tick = gradual_tick_main
     },
-    RGB_AUX_CHANNELS
+    { // aux LEDs
+        .set_level    = set_level_aux,
+        .gradual_tick = gradual_tick_null
+    }
 };
 
 
@@ -59,4 +66,9 @@ bool gradual_tick_main(uint8_t gt) {
     }
     return false;  // not done yet
 }
+
+
+
+///   END   
+
 
