@@ -18,3 +18,10 @@ venv/
 *.o
 *.old
 *.otl
+
+anduril-mods/
+bin-mods/
+hw-mods/
+dfp/
+AVRDUDE-v8.0/
+*.ps1
