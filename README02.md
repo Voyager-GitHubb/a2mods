@@ -1,0 +1,120 @@
+Create README02.md
+
+2025-02-16
+README02.md. This is a secondary README file, contains info on the mods of this specific branch.
+now it's empty though, kinda a placeholder, I'm still learning/playing with this Git, GitHub, GitHub Desktop thingy ...
+
+2025-02-16
+OK, let's get it going...
+
+This specific branch is anduril2 with many mods. 
+
+. 
+. 
+. 
+. 
+
+# CUSTOM FEATURES   
+
+
+## ver-check-mode
+
+- This is a custom version-check-mode added into the blinky group.
+  Similar to the default (13H) **version-check-mode**.
+  **ver-check-mode**, in the blinky group, after **temp-check-mode**, before **beacon-mode**.
+  The default **version-check-mode** runs only once.
+  This custom **ver-check-mode** runs repeatedly. 1C turns OFF (off-mode), 2C goes to **beacon-mode**.
+  extra files in the **anduril** directory: **ver-check-mode.c** and **ver-check-mode.h**, which are copies of the OG files, with some mods.
+
+
+.  
+.  
+
+
+## remap button clicks for blinky group
+
+OFF, **5C**: activate **battcheck-mode** (OG is 3C)   
+
+**1C**: turn off  
+
+**2C**: rotate through blinky group:  
+   - **tempcheck-mode**  
+   - **ver-check-mode**  
+   - **beacon-mode**   
+
+.  
+.  
+
+
+## strobe group with extra strobe modes
+
+   - bike flasher
+   - party strobe
+   - tatical strobe
+   - police color strobe 
+   - lightning mode
+   - candle mode
+  .   
+   - fireworks mode (new)
+   - lighthouse mode (new)
+   - broken fluorescent mode (new)
+
+
+extra strobe modes are inspired by and copied from [SiteRelEnby anduril branch](https://github.com/SiteRelEnby/anduril)   and [starryalley anduril branch](https://github.com/starryalley/anduril) 
+
+.  
+.  
+
+
+## strobe-modes, remap button clicks 
+
+OFF or ON, **3C**: activate strobe-modes (OG is 3H)  
+
+**1C**: off  
+**2C**: rotate through strobe/flasher modes  
+**3C**: rotate backward through strobe/flasher modes  
+
+.  
+
+**1H** :  
+    -  party strobe faster  
+    -  tactical strobe faster  
+    -  biking mode brighter  
+    -  broken fluorescent mode brighter  
+
+**2H**:   
+    -  party strobe faster  
+    -  tactical strobe slower  
+    -  biking mode dimmer  
+    -  broken fluorescent dimmer  
+
+.  
+
+**4C**:  
+    -  turning lightning mode busy factor,   
+    -  or turning down firework brightness by 12,  
+    -  or decrease lighthouse delay by 1 sec  
+
+**5C**:   
+    -   turning up lightning mode busy factor,   
+    -   or turning up firework brightness by 12,  
+    -   or increasing lighthouse delay by 1 sec  
+
+**6C**:    
+    -   reset lightning mode busy factor to default,  
+    -   or reset firework brightness to default  
+    -   or reset lighthouse delay to default  
+
+.  
+
+**7C**:  
+    -   rotate through channel modes for the current strobe  
+
+.  
+.  
+
+
+.  
+
+
+
