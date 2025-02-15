@@ -1,4 +1,4 @@
-Create README02.md
+## Create README02.md
 
 2025-02-16
 README02.md. This is a secondary README file, contains info on the mods of this specific branch.
@@ -54,7 +54,7 @@ OFF, **5C**: activate **battcheck-mode** (OG is 3C)
    - police color strobe 
    - lightning mode
    - candle mode
-  .   
+     
    - fireworks mode (new)
    - lighthouse mode (new)
    - broken fluorescent mode (new)
