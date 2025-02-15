@@ -19,6 +19,7 @@ venv/
 *.old
 *.otl
 
+# 2025-02-16, added more items to be ignored:
 anduril-mods/
 bin-mods/
 hw-mods/
