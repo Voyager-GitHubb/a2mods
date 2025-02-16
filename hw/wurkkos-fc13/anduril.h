@@ -314,7 +314,178 @@
 
 
 
-///   ///   ///   ///   ///   ///   ///   ///   ///   ///
+
+
+
+
+/*  /// 
+
+ */
+
+
+
+/* /////    BLINKIES AND STROBES     /////  
+///  from `config-default.h` : 
+
+#define USE_SOS_MODE
+#define USE_BEACON_MODE
+
+// enable various strobe modes
+#define USE_BIKE_FLASHER_MODE
+#define USE_PARTY_STROBE_MODE
+#define USE_TACTICAL_STROBE_MODE
+
+#define USE_LIGHTNING_MODE
+#define USE_CANDLE_MODE
+
+
+
+///  from  `sofirn/anduril.h` :  
+#define USE_FIREWORK_MODE
+#define USE_LIGHTHOUSE_MODE
+#define USE_BAD_FLUORESCENT_MODE
+
+
+ */
+/* /// DISABLE SOME BLINKIES ? 
+
+#undef USE_SOS_MODE
+#undef USE_BEACON_MODE
+
+ */
+#undef USE_SOS_MODE
+
+
+
+/* /// DISABLE SOME STROBES ? 
+#undef USE_BIKE_FLASHER_MODE
+#undef USE_PARTY_STROBE_MODE
+#undef USE_TACTICAL_STROBE_MODE
+
+#undef USE_LIGHTNING_MODE
+
+
+#undef USE_BAD_FLUORESCENT_MODE
+#undef USE_FIREWORK_MODE
+#undef USE_LIGHTHOUSE_MODE
+
+ */
+
+#undef USE_CANDLE_MODE
+
+
+
+
+/// 2025-02-10: #define USE_BEACONN_MODE
+/*  /// 2025-02-09: BEACONN_MODE in STROBE_GROUP 
+
+
+/// 2025-02-07: BMISG
+/// BEACON_MODE_ISG
+/// USE_BEACON_MODE_IN_STROBE_GROUP 
+/// #define USE_BEACON_MISG
+
+
+/// 2025-02-09: BMISG
+/// BEACON-MISG
+/// USE_BEACON_MODE_ISG 
+/// #define USE_BEACON_MODE_ISG
+#define USE_BEACON_MODE_ISG
+
+
+/// 2025-02-11: BEACONN_MODE
+/// config integrated into strobe-modes files
+/// works very well
+/// 1H timing / interval adjustment works very well
+#define USE_BEACONN_MODE
+
+
+ */
+#define USE_BEACONN_MODE
+
+
+
+
+
+/*  /// "VER_CHECK_MODE" in the blinky group  
+ * idea: "version-check"  in the blinky group? 
+ * tested on the SC31 Pro t1616 
+   additional line in the "sofirn/sc31-pro-t1616/anduril.h" :  
+     #define USE_VER_CHECK_MODE		
+ * additional lines in the "battcheck-mode.c" : 
+     #elif defined(USE_VER_CHECK_MODE)
+     set_state(ver_check_state, 0);
+ */
+/*  /// "USE_VER_CHECK_MODE" 
+ * in "config-default.h" , for reference: 
+     "include a function to blink out the firmware version" 
+     "#define USE_VERSION_CHECK"
+
+ * sc31-pro-t1616: "USE_VER_CHECK_MODE" 
+ */
+#define USE_VER_CHECK_MODE
+
+
+/* /// DEFAULT_DONT_RAMP_AFTER_MOON
+/// some settings are applied per flashlight  
+/// adjusted for each flashlight 
+/// tested on the  sc31-pro-t1616 
+/// 1H = floor (moon). stay at moon, don't ramp up 
+ */
+#define DEFAULT_DONT_RAMP_AFTER_MOON 1
+
+
+/* /// DEFAULT MANUAL MEMORY  
+///   stepped ramp:   1  31  61  91   121 
+
+ */
+#define DEFAULT_MANUAL_MEMORY 38
+
+
+/* /// TACTICAL MODE LEVELS
+
+///   1H,  2H , 3H : 
+///   HIGH , TACTICAL STROBE , LOW  
+///     150 = turbo
+///     (RAMP_SIZE+1) = party strobe
+///     (RAMP_SIZE+2) = tactical strobe
+///     (RAMP_SIZE+3) = bike flasher  
+
+
+///example:
+#define TACTICAL_LEVELS 129,(RAMP_SIZE+2),DEFAULT_MANUAL_MEMORY
+#define TACTICAL_LEVELS RAMP_DISCRETE_CEIL,(RAMP_SIZE+2),DEFAULT_MANUAL_MEMORY
+
+
+ */
+#define TACTICAL_LEVELS RAMP_DISCRETE_CEIL,(RAMP_SIZE+2),DEFAULT_MANUAL_MEMORY
+
+
+
+/* /// MORE MODS ? ..
+
+#undef USE_RAMP_SPEED_CONFIG
+#undef USE_RAMP_AFTER_MOON_CONFIG
+#undef USE_2C_STYLE_CONFIG
+
+
+#undef USE_POLICE_STROBE_MODE
+#undef USE_CHANNEL_PER_STROBE
+
+#undef USE_TACTICAL_MODE
+
+#undef USE_SUNSET_TIMER
+
+ */
+#undef USE_SIMPLE_UI
+
+
+
+
+
+///   ///   ///   ///   ///   ///   ///
+
+
 
 
 
