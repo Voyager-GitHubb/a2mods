@@ -121,4 +121,45 @@ OFF or ON, **3C**: activate strobe-modes (OG is 3H)
 .   
 
 
+## Extended aux patterns
+
+
+- EXTENDED_INDICATOR_PATTERNS from [SammysHP Anduril  (https://github.com/SammysHP/anduril/tree/more-aux-patterns)](https://github.com/SammysHP/anduril/tree/more-aux-patterns) 
+
+
+**more-aux-patterns** 
+
+```
+Add more aux LED patterns like short low intensity blinks, short high intensity blinks or no aux LEDs at all (but keep the switch LED enabled). Works for classic and RGB aux LEDs. Also fixes some edge cases of aux handling.
+
+```
+
+
+
+- The OG aux patterns:   
+   - Off 
+   - Low
+   - High 
+   - Blinking (fancy blinking) 
+
+- Extended aux patterns:   
+   - Off 
+   - Low
+   - High 
+   - Blinking (fancy blinking) 
+   - Low blinking 
+   - High blinking 
+
+
+
+.   
+.   
+.   
+
+
+.   
+.   
+.   
+
+
 
