@@ -110,11 +110,15 @@ OFF or ON, **3C**: activate strobe-modes (OG is 3H)
 **7C**:  
     -   rotate through channel modes for the current strobe  
 
-.  
-.  
 
 
-.  
+
+
+
+
+.   
+.   
+.   
 
 
 
