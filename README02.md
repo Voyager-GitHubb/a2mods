@@ -1,52 +1,76 @@
+
+.   
+.   
+.   
+
 ## Create README02.md
 
-2025-02-16
-README02.md. This is a secondary README file, contains info on the mods of this specific branch.
-now it's empty though, kinda a placeholder, I'm still learning/playing with this Git, GitHub, GitHub Desktop thingy ...
+2025-02-16  
 
-2025-02-16
-OK, let's get it going...
+README02.md.  
 
+This is a secondary README file, contains info on the mods of this specific branch.
+now it's empty though, kinda a placeholder, I'm still learning/playing with this Git, GitHub, GitHub Desktop thingy ...  
+
+.   
+.   
+.   
+
+2025-02-16   
+
+OK, let's get it going...   
 This specific branch is anduril2 with many mods. 
 
-. 
-. 
-. 
-. 
+.   
+.   
+.   
+
+.   
+.   
+.   
 
 # CUSTOM FEATURES   
 
 
 ## ver-check-mode
 
-- This is a custom version-check-mode added into the blinky group.
-  Similar to the default (13H) **version-check-mode**.
-  **ver-check-mode**, in the blinky group, after **temp-check-mode**, before **beacon-mode**.
-  The default **version-check-mode** runs only once.
-  This custom **ver-check-mode** runs repeatedly. 1C turns OFF (off-mode), 2C goes to **beacon-mode**.
-  extra files in the **anduril** directory: **ver-check-mode.c** and **ver-check-mode.h**, which are copies of the OG files, with some mods.
+ - This is a custom version-check-mode added into the blinky group.  
+
+ - Similar to the default (OFF, 13H) **version-check-mode**.  
+
+ - The default **version-check-mode** runs only once. This custom **ver-check-mode** runs repeatedly. 
+
+ - 1C to turn OFF (off-mode)  
+  2C to cycle the modes:  
+  **battcheck-mode**  --> **temp-check-mode**  -->  **ver-check-mode**  -->  **beacon-mode**.  
+
+ - Extra files in the **anduril** directory:  
+   **ver-check-mode.c** and **ver-check-mode.h**, which are basically copies of the OG version-check-mode files, with some mods.
 
 
-.  
-.  
+.   
+.   
+.   
 
 
-## remap button clicks for blinky group
+##   Button clicks for blinky group
 
 OFF, **5C**: activate **battcheck-mode** (OG is 3C)   
 
 **1C**: turn off  
 
 **2C**: rotate through blinky group:  
+   - **battcheck-mode**
    - **tempcheck-mode**  
    - **ver-check-mode**  
    - **beacon-mode**   
 
 .  
 .  
+.   
 
 
-## strobe group with extra strobe modes
+## Strobe group with extra strobe modes
 
    - bike flasher
    - party strobe
@@ -58,10 +82,14 @@ OFF, **5C**: activate **battcheck-mode** (OG is 3C)
    - fireworks mode (new)
    - lighthouse mode (new)
    - broken fluorescent mode (new)
+  
+
+Extra strobe modes are inspired by and copied   
+from [SiteRelEnby anduril branch](https://github.com/SiteRelEnby/anduril)   
+and [starryalley anduril branch](https://github.com/starryalley/anduril) 
 
 
-extra strobe modes are inspired by and copied from [SiteRelEnby anduril branch](https://github.com/SiteRelEnby/anduril)   and [starryalley anduril branch](https://github.com/starryalley/anduril) 
-
+.  
 .  
 .  
 
@@ -109,11 +137,6 @@ OFF or ON, **3C**: activate strobe-modes (OG is 3H)
 
 **7C**:  
     -   rotate through channel modes for the current strobe  
-
-
-
-
-
 
 
 .   

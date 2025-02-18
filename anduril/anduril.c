@@ -46,23 +46,6 @@
 
 /////////////////////////////////////////////////////////////
 
-///   FOR SOFIRN UNITS THIS OPTIONS IS SUPPLEMENTED WITH
-///   THE "/sofirn/anduril.h" FILE 
-
-/********* ADDITIONAL User-configurable options *********/
-
-///   2025-01-09 21:15:08
-///   Rather than adding fav mods to every single
-///   "anduril.h"  file, let's make an additional
-///   "config-default" and put those fav mods in one place. 
-///      #include "anduril/config-default-mods.h"
-///   ADDITIONAL : 
-///      "/sofirn/anduril.h"
-
-/////////////////////////////////////////////////////////////
-
-
-
 
 
 /********* specific settings for known driver types *********/
@@ -141,22 +124,6 @@
 #ifdef USE_THERMAL_REGULATION
 #include "anduril/tempcheck-mode.h"
 #endif
-
-
-
-
-
-
-/*   /// BEACON_MODE_ISG,FAILED
-
-/// BEACON_MODE_ISG
-#ifdef USE_BEACON_MODE_ISG
-#include "anduril/beacon-mode-isg.h"
-#include "anduril/beacon-mode.h"
-
-#endif
-
- */
 
 
 
@@ -248,23 +215,6 @@
 
 
 
-
-
-/*   /// BEACON_MODE_ISG , FAILED
-
-/// BEACON_MODE_ISG
-#ifdef USE_BEACON_MODE_ISG
-#include "anduril/beacon-mode-isg.c"
-#include "anduril/beacon-mode.c"
-#endif
-
- */
-
-
-
-
-
-
 /*  /// VER_CHECK_MODE
         /// VERSION_CHECK_MODE in blinky group  
         /// WIP: compile and test on the SC31 Pro t1616 
@@ -274,7 +224,6 @@
 #ifdef USE_VER_CHECK_MODE
 #include "anduril/ver-check-mode.c"
 #endif
-
 
 
 
@@ -374,6 +323,9 @@ void setup() {
 }
 
 
+
+
+
 // runs repeatedly whenever light is "on" (not in standby)
 void loop() {
 
@@ -461,22 +413,6 @@ void loop() {
 
 
 
-
-/*   /// BEACON_MODE_ISG didnt work
-
-    /// 2025-02-10 
-    /// BEACON_MODE_ISG
-    #ifdef USE_BEACON_MODE_ISG
-    else if (state == beacon_mode_isg_state) {
-        beacon_mode_isg_iter();
-    }
-    #endif
-
- */
-
-
-
-
     /*  /// VER_CHECK_MODE
         /// VERSION_CHECK_MODE in blinky group  
         /// WIP: compile and test on the SC31 Pro t1616 
@@ -507,6 +443,9 @@ void loop() {
     #endif
 
 }
+
+
+
 
 
 // instead of handling EV_low_voltage in each mode,
@@ -543,6 +482,83 @@ void low_voltage() {
     }
 
 }
+
+
+
+
+
+
+///   ///   ///   ///   ///   ///   ///   ///   ///   ///  
+///   ///   ///   ///   ///   ///   ///   ///   ///   ///  
+///   ///   ///   ///   ///   ///   ///   ///   ///   ///  
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////
+
+
+///   FOR SOFIRN UNITS THIS OPTIONS IS SUPPLEMENTED WITH
+///   THE "/sofirn/anduril.h" FILE 
+
+/********* ADDITIONAL User-configurable options *********/
+
+///   2025-01-09 21:15:08
+///   Rather than adding fav mods to every single
+///   "anduril.h"  file, let's make an additional
+///   "config-default" and put those fav mods in one place. 
+///      #include "anduril/config-default-mods.h"
+///   ADDITIONAL : 
+///      "/sofirn/anduril.h"
+
+/////////////////////////////////////////////////////////////
+
+
+
+
+
+/*   /// BEACON_MODE_ISG,FAILED
+
+/// BEACON_MODE_ISG
+#ifdef USE_BEACON_MODE_ISG
+#include "anduril/beacon-mode-isg.h"
+#include "anduril/beacon-mode.h"
+
+#endif
+
+ */
+
+
+
+/*   /// BEACON_MODE_ISG , FAILED
+
+/// BEACON_MODE_ISG
+#ifdef USE_BEACON_MODE_ISG
+#include "anduril/beacon-mode-isg.c"
+#include "anduril/beacon-mode.c"
+#endif
+
+ */
+
+
+
+/*   /// BEACON_MODE_ISG didnt work
+
+    /// 2025-02-10 
+    /// BEACON_MODE_ISG
+    #ifdef USE_BEACON_MODE_ISG
+    else if (state == beacon_mode_isg_state) {
+        beacon_mode_isg_iter();
+    }
+    #endif
+
+ */
 
 
 
